@@ -1,0 +1,37 @@
+<div class="pf-c-page">
+  {{> header}}
+
+  <main role="main" class="pf-c-page__main">
+    <section style="text-align: center;" class="pf-c-page__main-section pf-m-light">
+      <div>
+        <i style="font-size: 48pt; opacity: 1; color: rgb(255, 63, 49);" class="fas fa-heart pf-u-mb-lg"></i>
+        <h1 style="font-weight: 600;" class="pf-c-title pf-m-xl pf-u-mb-sm">
+          Thanks for choosing this template!
+        </h1>
+
+        <p style="opacity: 0.7; padding-bottom: 0.5em; display: inline-block; border-bottom: 1px solid rgba(0, 0, 0, 0.2);;">
+          It has some neat features built-in so you can deliver value more quickly.
+        </p>
+        <br>
+
+        <p class="feature first">Server-Side Rendering of pages using Handlebars.</p>
+        <p class="feature">Hot Reloading during local development using nodemon.</p>
+        <p class="feature">UI/UX design and components built with PatternFly.</p>
+        <p class="feature">Configuration via environment variables with fail-fast validation.</p>
+        <p class="feature">Simplified deployment to OpenShift using nodeshift.</p>
+        <p class="feature">Error generation using the @hapi/boom module.</p>
+        <p class="feature">Support for Keycloak (Red Hat SSO) using an environment variable.</p>
+
+      </div>
+    </section>
+  </main>
+
+  <style>
+    .feature {
+      padding-bottom: 1em;
+    }
+    .feature.first {
+      padding-top: 2em;
+    }
+  </style>
+</div>
