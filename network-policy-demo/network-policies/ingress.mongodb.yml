@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: mongodb-ingress-any
+spec:
+  podSelector:
+    matchLabels:
+      name: mongodb
+  policyTypes:
+  - Ingress
+  ingress:
+  - from:
+    - namespaceSelector:
+        matchLabels: {}
+    ports:
+    - protocol: TCP
+      port: 27017

@@ -1,0 +1,30 @@
+apiVersion: v1
+items:
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    name: allow-from-all-namespaces
+  spec:
+    ingress:
+    - from:
+      - namespaceSelector: {}
+    podSelector: {}
+    policyTypes:
+    - Ingress
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    name: allow-from-ingress-namespace
+  spec:
+    ingress:
+    - from:
+      - namespaceSelector:
+          matchLabels:
+            network-policy: global
+    podSelector: {}
+    policyTypes:
+    - Ingress
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""

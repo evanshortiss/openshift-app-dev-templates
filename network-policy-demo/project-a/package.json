@@ -1,0 +1,26 @@
+{
+  "name": "project-a",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Example Node.js application that writes request information to MongoDB",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "nodeshift --strictSSL=false --namespace.create --namespace.name='project-a' --namespace.displayName='Project A' --expose",
+    "format": "standard index.js --fix",
+    "start": "node index.js",
+    "test": "echo \"Error: no tests specified\""
+  },
+  "keywords": [],
+  "author": "Evan Shortiss",
+  "license": "MIT",
+  "dependencies": {
+    "env-var": "~6.1.1",
+    "fastify": "~2.14.1",
+    "fastify-mongodb": "~2.0.0",
+    "mongodb": "~3.5.8"
+  },
+  "devDependencies": {
+    "nodeshift": "~6.1.0",
+    "standard": "^14.3.4"
+  }
+}
