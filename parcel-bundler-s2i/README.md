@@ -5,7 +5,8 @@ loaded from a remote REST API.
 
 ## Product API
 
-The API must return an Array of Objects with this format:
+The API must set the correct CORS header (or `*` if you don't care!), and
+return an Array of Objects with this format:
 
 ```js
 [
@@ -37,4 +38,6 @@ oc new-app $BUILDER~$SOURCE \
 --context-dir parcel-bundler-s2i \
 --build-env API_URL=$API_URL \
 -l app.openshift.io/runtime=nginx
+
+oc expose svc/product-ui
 ```
