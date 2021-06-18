@@ -29,11 +29,12 @@ server to render the UI, and proxy the API calls. Whatever works, right? 🤷‍
 
 ```bash
 export BUILDER=quay.io/evanshortiss/s2i-nodejs-nginx
-export SOURCE=https://github.com/evanshortiss/shipwars-visualisations
+export SOURCE=https://github.com/evanshortiss/openshift-app-dev-templates
 export API_URL=http://api.endpoint.com/products
 
 oc new-app $BUILDER~$SOURCE \
 --name product-ui \
+--context-dir parcel-bundler-s2i \
 --build-env API_URL=$API_URL \
 -l app.openshift.io/runtime=nginx
 ```
